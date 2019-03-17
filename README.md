@@ -9,7 +9,7 @@ This gatsby-starter-blog implementation is used to demonstrate possible ways of 
 Firstly, add the necessary packages to your gatsby project
 
 ```
-npm i --save gatsby-source-google-photos gatsby-google-photos-gallery
+npm i --save gatsby-plugin-cloudinary-image-gallery
 ```
 
 If you plan on using the component inside your markdown files / posts add the `rehype-react` and `gatsby-component-remark`
@@ -18,7 +18,7 @@ If you plan on using the component inside your markdown files / posts add the `r
 npm i --save rehype-react gatsby-component-remark
 ```
 
-### Setup gatsby-source-google-photos
+### Setup gatsby-plugin-cloudinary-image-gallery
 
 ### Create a StaticQuery component
 
@@ -29,14 +29,14 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
-import PhotoGrid from "gatsby-google-photos-gallery"
+import ImageGallery from "gatsby-plugin-cloudinary-image-gallery"
 
-const Gallery = ({ album, columns, orientation }) => (
+const Gallery = ({ folder, columns, orientation }) => (
   <StaticQuery
     query={imageGalleryQuery}
     render={data => (
-      <PhotoGrid
-        album={album}
+      <ImageGallery
+        folder={folder}
         columns={columns}
         data={data}
         orientation={orientation}
@@ -47,18 +47,16 @@ const Gallery = ({ album, columns, orientation }) => (
 
 const imageGalleryQuery = graphql`
   query galleryQuery {
-    cloudinaryImage: allGooglePhoto {
+    cloudinaryImage: allCloudinaryImage {
       edges {
         node {
           id
-          albumTitle
-          url
-          description
-          filename
-          mediaMetadata {
-            width
-            height
-          }
+          folder
+          thumb
+          imgUrl
+          width
+          height
+          orientation
         }
       }
     }
@@ -74,7 +72,7 @@ const imageGalleryQuery = graphql`
 `
 
 Gallery.propTypes = {
-  album: PropTypes.string.isRequired,
+  folder: PropTypes.string.isRequired,
 }
 
 export default Gallery
@@ -134,4 +132,4 @@ Update your gatsby-config with
 <photo-gallery album="gatsby"></photo-gallery>
 ```
 
-Visit [gatsby-google-photos-gallery](https://github.com/tinavanschelt/gatsby-google-photos-gallery) for details on how you can customise the component.
+Visit [gatsby-plugin-cloudinary-image-gallery](https://github.com/tinavanschelt/gatsby-plugin-cloudinary-image-gallery) for details on how you can customise the component.
