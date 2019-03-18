@@ -1,17 +1,13 @@
 {
   "name": "gatsby-starter-blog",
   "private": true,
-  "description": "An example for how to use gatsby-source-google-photos and gatsby-google-photos-gallery with the gatsby-starter-blog",
+  "description": "An example of how to use gatsby-plugin-cloudinary-image-gallery with the gatsby-starter-blog",
   "version": "0.1.0",
-  "author": "Tina van Schelt <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "author": "Tina van Schelt <tinavanschelte@gmail.com>",
   "dependencies": {
     "cloudinary": "^1.13.2",
     "gatsby": "^2.1.27",
     "gatsby-cli": "^2.4.14",
-    "gatsby-google-photos-gallery": "^1.0.6",
     "gatsby-image": "^2.0.31",
     "gatsby-plugin-cloudinary-image-gallery": "^1.0.1",
     "gatsby-plugin-feed": "^2.0.14",
@@ -28,7 +24,6 @@
     "gatsby-remark-responsive-iframe": "^2.0.9",
     "gatsby-remark-smartypants": "^2.0.8",
     "gatsby-source-filesystem": "^2.0.23",
-    "gatsby-source-google-photos": "^1.0.3",
     "gatsby-transformer-remark": "^2.3.1",
     "gatsby-transformer-sharp": "^2.1.15",
     "photoswipe": "^4.1.3",
@@ -54,7 +49,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/tinavanschelt/gatsby-cloudinary-image-gallery-example.git"
   },
   "scripts": {
     "build": "gatsby build",

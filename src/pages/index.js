@@ -24,29 +24,22 @@ class BlogIndex extends React.Component {
           This gatsby-starter-blog implementation is used to demonstrate
           possible ways of using{" "}
           <a
-            href="https://github.com/tinavanschelt/gatsby-source-google-photos"
+            href="https://github.com/tinavanschelt/gatsby-plugin-cloudinary-image-gallery"
             target="_blank"
           >
-            gatsby-source-google-photos
-          </a>{" "}
-          with{" "}
-          <a
-            href="https://github.com/tinavanschelt/gatsby-google-photos-gallery"
-            target="_blank"
-          >
-            gatsby-google-photos-gallery
+            gatsby-plugin-cloudinary-image-gallery
           </a>
           . A repo of this site, including an overview of how the starter-blog
           was modified, is available on{" "}
           <a
-            href="https://github.com/tinavanschelt/gatsby-google-photos-gallery-example"
+            href="https://github.com/tinavanschelt/gatsby-plugin-cloudinary-image-gallery-example"
             target="_blank"
           >
             github
           </a>
           .
         </p>
-        <Gallery album="gatsby" columns="2" />
+        <Gallery folder="gatsby" columns="2" />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (

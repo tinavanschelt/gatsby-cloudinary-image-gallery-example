@@ -1,6 +1,6 @@
 # Gatsby Cloudinary Image Gallery Example
 
-This gatsby-starter-blog implementation is used to demonstrate possible ways of using [https://github.com/tinavanschelt/gatsby-source-google-photos](gatsby-source-google-photos) and [https://github.com/tinavanschelt/gatsby-google-photos-gallery](gatsby-google-photos-gallery).
+This gatsby-starter-blog implementation is used to demonstrate gatsby-plugin-cloudinary-image-gallery use cases.
 
 ## Overview of modifications made to gatsby-starter-blog
 

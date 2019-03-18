@@ -8,16 +8,16 @@ date: "2019-03-10T23:46:37.121Z"
 Firstly, add the necessary packages to your gatsby project
 
 ```
-npm i --save gatsby-source-google-photos gatsby-google-photos-gallery
+npm i --save gatsby-plugin-cloudinary-image-gallery
 ```
 
 If you plan on using the component inside your markdown files / posts add the `rehype-react` and `gatsby-component-remark`
 
 ```
-npm i --save rehype-react gatsby-component-remark
+npm i --save gatsby-plugin-cloudinary-image-gallery
 ```
 
-### Setup gatsby-source-google-photos
+### Setup gatsby-plugin-cloudinary-image-gallery
 
 ### Create a StaticQuery component
 
@@ -28,13 +28,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
-import PhotoGrid from "gatsby-google-photos-gallery"
+import ImageGallery from "gatsby-plugin-cloudinary-image-gallery"
 
 const Gallery = ({ folder, columns, orientation }) => (
   <StaticQuery
     query={imageGalleryQuery}
     render={data => (
-      <PhotoGrid
+      <ImageGallery
         folder={folder}
         columns={columns}
         data={data}
@@ -46,18 +46,16 @@ const Gallery = ({ folder, columns, orientation }) => (
 
 const imageGalleryQuery = graphql`
   query galleryQuery {
-    cloudinaryImage: allGooglePhoto {
+    cloudinaryImage: allCloudinaryImage {
       edges {
         node {
           id
-          folderTitle
-          url
-          description
-          filename
-          mediaMetadata {
-            width
-            height
-          }
+          folder
+          thumb
+          imgUrl
+          width
+          height
+          orientation
         }
       }
     }

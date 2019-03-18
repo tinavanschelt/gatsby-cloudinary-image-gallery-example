@@ -4,8 +4,8 @@ module.exports = {
   siteMetadata: {
     title: `Gatsby Cloudinary Image Gallery`,
     author: `Tina van Schelt`,
-    description: `An example for how to use gatsby-source-google-photos and gatsby-google-photos-gallery with the gatsby-starter-blog`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `An example of how to use gatsby-plugin-cloudinary-image-gallery with the gatsby-starter-blog`,
+    siteUrl: `https://agitated-minsky-c1bf4e.netlify.com/`,
     social: {
       twitter: `tinavanschelt`,
     },
